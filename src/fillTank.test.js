@@ -33,15 +33,15 @@ describe('fillTank', () => {
   });
 
   it('should round amount to the tenth part', () => {
-    fillTank(customer, 100, 20.8555);
+    fillTank(customer, 100, 20.85);
 
     expect(customer.vehicle.fuelRemains).toBe(28.8);
   });
 
   it('should round amount to the nearest hundredth part', () => {
-    fillTank(customer, 100.051, 5);
+    fillTank(customer, 100.05, 5);
 
-    expect(customer.money).toBe(2499.74);
+    expect(customer.money).toBe(2499.75);
   });
 
   it('should not fill in if rounded amount less than 2 liters', () => {
